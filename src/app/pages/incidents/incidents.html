@@ -1,0 +1,86 @@
+<div class="incidents-container">
+  <div class="sub-tabs">
+    <div class="sub-tab active">Company Incidents</div>
+    <div class="sub-tab">My Incidents</div>
+    <div class="sub-tab">Major Incidents</div>
+  </div>
+
+  <div class="controls-row">
+    <div class="dropdowns">
+      <div class="form-group">
+        <label>Select Company</label>
+        <select>
+          <option>Société Air France (0000000001)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Incident Status</label>
+        <select>
+          <option>Open</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-primary">+ REPORT NEW INCIDENT</button>
+  </div>
+
+  <div class="grid-area">
+    <div class="filter-bar">
+      <div class="filter-inputs">
+        <div class="form-group">
+          <label>Search by Ticket Number</label>
+          <div class="search-input">
+            <input type="text" placeholder="Enter a valid ticket number">
+            <button>🔍</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Customise Table View</label>
+          <select>
+            <option>8 columns selected</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button class="btn-icon">↺</button>
+        <button class="btn-secondary">Export To CSV</button>
+      </div>
+    </div>
+
+    <div class="active-filters">
+      <span class="label">Applied by assistant</span>
+      <span class="pill">Status: open ✕</span>
+      <span class="pill">Service: SITA CONNECT ✕</span>
+      <span class="pill">Location: Hamburg ✕</span>
+      <span class="pill">Last 7 days ✕</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ticket Number</th>
+          <th>Created Date</th>
+          <th>Short Description</th>
+          <th>Service</th>
+          <th>Status</th>
+          <th>Location</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let incident of incidents">
+          <td><a href="#">{{ incident.ticketNumber }}</a></td>
+          <td>{{ incident.createdDate }}</td>
+          <td>{{ incident.shortDescription }}</td>
+          <td>{{ incident.service }}</td>
+          <td>{{ incident.status }}</td>
+          <td>{{ incident.location }}</td>
+          <td>{{ incident.priority }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="pagination">
+      <span>6 of 218 incidents</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <div class="title-area">
+      <span class="icon">✨</span>
+      <span class="title">DigiHub assistant</span>
+    </div>
+    <div class="actions">
+      <span>—</span>
+    </div>
+  </div>
+
+  <div class="chat-history">
+    <div class="user-message">
+      Show me open SITA Connect incidents in Hamburg from the last week
+    </div>
+
+    <div class="bot-message">
+      <p>Applied 4 filters to the grid.</p>
+      
+      <div class="tool-call">
+        <div class="tool-header">TOOL CALL</div>
+        <div class="tool-name">applyIncidentFilters</div>
+        <div class="tool-args">
+          status: open<br>
+          service: SITA CONNECT<br>
+          site: Hamburg<br>
+          window: 7d
+        </div>
+      </div>
+
+      <p>CCD012098 has been open 4 days with no update. Want a summary?</p>
+    </div>
+
+    <div class="suggestion">Summarise CCD012098</div>
+    <div class="suggestion">Save this as a view</div>
+    <div class="suggestion">Export the filtered list</div>
+  </div>
+
+  <div class="chatbot-footer">
+    <div class="scope-info">
+      <span class="dot"></span>
+      <span>Read-only - scoped to Société Air France</span>
+    </div>
+    <div class="input-area">
+      <input type="text" placeholder="Ask about your incidents...">
+      <button class="send-btn">➔</button>
+    </div>
+  </div>
+</div>

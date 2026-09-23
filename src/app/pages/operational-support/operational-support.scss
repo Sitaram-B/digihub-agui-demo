@@ -1,0 +1,50 @@
+.op-support-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  margin-bottom: 20px;
+  
+  .muted {
+    color: #888;
+    margin-right: 5px;
+  }
+  
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    
+    &.active {
+      color: #333;
+      border-bottom: 2px solid #333;
+    }
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+

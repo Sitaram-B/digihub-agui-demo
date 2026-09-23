@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-billing',
-  styleUrl: './billing.scss',
+  imports: [],
   templateUrl: './billing.html',
+  styleUrl: './billing.scss'
 })
-export class Billing {}
+export class BillingComponent {}

@@ -1,0 +1,68 @@
+.topbar-container {
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #363636;
+}
+
+.user-info {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .notifications {
+    position: relative;
+    cursor: pointer;
+    background-color: #fef387; /* lemon-yellow */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #363636;
+  }
+
+  .profile-icon {
+    font-size: 20px;
+    color: #9c9c9c;
+    border: 1px solid #cfcfcf;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    text-align: right;
+
+    .name {
+      font-weight: 600;
+      color: #2d2d2d;
+    }
+    
+    .company {
+      color: #9c9c9c;
+      font-size: 11px;
+    }
+  }
+}
