@@ -1,7 +1,18 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
+import { provideCopilotKit } from '@copilotkit/angular';
+import { HttpAgent } from '@ag-ui/client';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideCopilotKit({
+      selfManagedAgents: {
+        default: new HttpAgent({ url: '/digihub' }) as any,
+      },
+      defaultToolRendering: true,
+    }),
+  ],
 };

@@ -1,0 +1,12 @@
+{
+  "/digihub": {
+    "target": "http://localhost:8888",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/agentic_chat": {
+    "target": "http://localhost:8888",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

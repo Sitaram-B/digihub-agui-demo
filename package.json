@@ -11,12 +11,18 @@
   "private": true,
   "packageManager": "npm@11.19.1",
   "dependencies": {
+    "@ag-ui/client": "^1.0.0",
+    "@ag-ui/core": "^1.0.0",
+    "@angular/cdk": "^22.2.0",
     "@angular/common": "^22.1.0",
     "@angular/compiler": "^22.1.0",
     "@angular/core": "^22.1.0",
     "@angular/forms": "^22.1.0",
     "@angular/platform-browser": "^22.1.0",
     "@angular/router": "^22.1.0",
+    "@copilotkit/angular": "^0.5.2",
+    "@copilotkit/core": "^1.73.3",
+    "@copilotkit/shared": "^1.73.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

@@ -17,6 +17,8 @@
         <label>Incident Status</label>
         <select>
           <option>Open</option>
+          <option>Closed</option>
+          <option>All</option>
         </select>
       </div>
     </div>
@@ -41,18 +43,22 @@
         </div>
       </div>
       <div class="filter-actions">
-        <button class="btn-icon">↺</button>
+        <button class="btn-icon" (click)="clearAllFilters()" title="Reset filters">↺</button>
         <button class="btn-secondary">Export To CSV</button>
       </div>
     </div>
 
-    <div class="active-filters">
-      <span class="label">Applied by assistant</span>
-      <span class="pill">Status: open ✕</span>
-      <span class="pill">Service: SITA CONNECT ✕</span>
-      <span class="pill">Location: Hamburg ✕</span>
-      <span class="pill">Last 7 days ✕</span>
-    </div>
+    <!-- Dynamic filter pills driven by AGUI service -->
+    @if (aguiService.filterPills().length > 0) {
+      <div class="active-filters">
+        @if (aguiService.appliedByAssistant()) {
+          <span class="label">Applied by assistant</span>
+        }
+        @for (pill of aguiService.filterPills(); track pill.key) {
+          <span class="pill" (click)="removeFilter(pill.key)">{{ pill.label }} ✕</span>
+        }
+      </div>
+    }
 
     <table class="data-table">
       <thead>
@@ -65,22 +71,50 @@
           <th>Location</th>
           <th>Priority</th>
         </tr>
+        <tr class="column-filters">
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>
+            <div class="col-search">
+              <span class="icon">🔍</span>
+              <input type="text" placeholder="Find Service" (input)="onColumnFilter('service', $event)" [value]="aguiService.activeFilters().service || ''">
+            </div>
+          </th>
+          <th>
+            <select (change)="onColumnFilter('status', $event)" [value]="aguiService.activeFilters().status || ''">
+              <option value="">All</option>
+              <option value="Open">Not Done (Open)</option>
+              <option value="Closed">Closed</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </th>
+          <th>
+            <div class="col-search">
+              <span class="icon">🔍</span>
+              <input type="text" placeholder="Find Location" (input)="onColumnFilter('location', $event)" [value]="aguiService.activeFilters().location || ''">
+            </div>
+          </th>
+          <th></th>
+        </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let incident of incidents">
-          <td><a href="#">{{ incident.ticketNumber }}</a></td>
-          <td>{{ incident.createdDate }}</td>
-          <td>{{ incident.shortDescription }}</td>
-          <td>{{ incident.service }}</td>
-          <td>{{ incident.status }}</td>
-          <td>{{ incident.location }}</td>
-          <td>{{ incident.priority }}</td>
-        </tr>
+        @for (incident of incidents; track incident.ticketNumber) {
+          <tr>
+            <td><a href="#">{{ incident.ticketNumber }}</a></td>
+            <td>{{ incident.createdDate }}</td>
+            <td>{{ incident.shortDescription }}</td>
+            <td>{{ incident.service }}</td>
+            <td><span class="status-badge" [class]="'status-' + incident.status.toLowerCase().replace(' ', '-')">{{ incident.status }}</span></td>
+            <td>{{ incident.location }}</td>
+            <td>{{ incident.priority }}</td>
+          </tr>
+        }
       </tbody>
     </table>
-    
+
     <div class="pagination">
-      <span>6 of 218 incidents</span>
+      <span>{{ incidents.length }} of {{ totalIncidents }} incidents</span>
     </div>
   </div>
 </div>

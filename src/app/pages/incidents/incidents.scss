@@ -168,6 +168,42 @@
     font-weight: 600;
   }
 
+  .column-filters {
+    th {
+      padding: 8px 12px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    select {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #cfcfcf;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .col-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        position: absolute;
+        left: 8px;
+        font-size: 12px;
+        color: #888;
+      }
+
+      input {
+        width: 100%;
+        padding: 6px 6px 6px 24px;
+        border: 1px solid #cfcfcf;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+    }
+  }
+
   td {
     color: #2d2d2d;
     
