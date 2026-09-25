@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('digihub-agui-demo');
+  protected readonly title = signal('ops-agui-demo');
 }

@@ -1,6 +1,6 @@
-# DigiHub AG-UI Demo (Angular + CopilotKit + FastAPI)
+# OpsHub AG-UI Demo (Angular + CopilotKit + FastAPI)
 
-A modern, standalone Angular 22 demo demonstrating **Agentic User Interaction (AG-UI)** for SITA DigiHub's Operational Support portal. It integrates an intelligent AI assistant using **CopilotKit Angular** connected to a **Python FastAPI backend** powered by Azure OpenAI and the AG-UI protocol.
+A modern, standalone Angular 22 demo demonstrating **Agentic User Interaction (AG-UI)** for the OpsHub Operational Support portal. It integrates an intelligent AI assistant using **CopilotKit Angular** connected to a **Python FastAPI backend** powered by Azure OpenAI and the AG-UI protocol.
 
 ---
 
@@ -8,7 +8,7 @@ A modern, standalone Angular 22 demo demonstrating **Agentic User Interaction (A
 
 ### 1. Natural Language UI Control (Chatbot Driving the UI)
 Users can ask the AI assistant in natural language to perform actions across the UI:
-- **Filter Incidents**: E.g., *"Show me open incidents in Hamburg"*, *"Show SITA Connect incidents in Hamburg from last week"*, *"Retrieve incidents from Frankfurt"*.
+- **Filter Incidents**: E.g., *"Show me open incidents in Hamburg"*, *"Show Cloud Connect incidents in Hamburg from last week"*, *"Retrieve incidents from Frankfurt"*.
 - **Automatic Navigation**: The assistant automatically navigates to relevant pages (e.g., *"Take me to billing"*).
 - **Incident Details & Knowledge**: E.g., *"Tell me about CCD012098"*, *"How many high-priority incidents are open?"*.
 
@@ -17,8 +17,8 @@ Users can ask the AI assistant in natural language to perform actions across the
 - **Shared Reactive State**: Both manual filters and assistant-applied filters feed into the same reactive signals (`AguiService`), updating filter pills and data grids seamlessly.
 - **Visual Feedback**: Dynamic filter pills display active filters, with indicator labels showing whether a filter was applied by the AI assistant.
 
-### 3. DigiHub Design & Styling
-- Styled to match SITA DigiHub legacy look and feel:
+### 3. OpsHub Design & Styling
+- Clean enterprise operational theme:
   - Deep forest-green sidebar (`#2b3e2b`)
   - Icy-blue grid container (`#bbe8ee`)
   - Orange active filter pills (`#ff782d`)
@@ -79,7 +79,7 @@ Try these in the CopilotKit chat sidebar:
 | Query | What Happens |
 | :--- | :--- |
 | **"Show me open incidents in Hamburg"** | Navigates to incidents grid, filters by `Status: Open` and `Location: Hamburg` (shows 6 tickets). |
-| **"Show SITA Connect incidents in Hamburg from last week"** | Applies multi-parameter filter (Service + Location + Time Window). |
+| **"Show Cloud Connect incidents in Hamburg from last week"** | Applies multi-parameter filter (Service + Location + Time Window). |
 | **"Retrieve incidents from Frankfurt"** | Displays all Frankfurt incidents without enforcing an "Open" status filter (shows 2 tickets). |
 | **"Tell me about CCD012098"** | Assistant reads details from data and replies directly with ticket status and details. |
 | **"Take me to billing"** | Assistant triggers `navigateToPage` and opens the Billing view. |
@@ -99,7 +99,7 @@ digihub-agui-demo/
 │   │   ├── components/
 │   │   │   ├── chatbot/       # CopilotSidebar + frontend tool registrations
 │   │   │   ├── main-layout/   # Topbar + Left Sidebar + Chatbot layout
-│   │   │   ├── sidebar/       # SITA Navigation sidebar
+│   │   │   ├── sidebar/       # Portal Navigation sidebar
 │   │   │   └── topbar/        # Customer header
 │   │   ├── pages/
 │   │   │   ├── billing/       # Billing page

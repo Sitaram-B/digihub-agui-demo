@@ -1,8 +1,8 @@
-"""DigiHub AGUI Demo Server.
+"""OpsHub AGUI Demo Server.
 
-FastAPI server hosting the DigiHub agent with AG-UI protocol support.
-Reuses the same pattern as the React demo's python_server but with a
-DigiHub-specific agent for incident management.
+FastAPI server hosting the OpsHub agent with AG-UI protocol support.
+Reuses the same pattern as the React demo's python_server but with an
+OpsHub-specific agent for incident management.
 """
 
 import os
@@ -23,7 +23,7 @@ from .digihub_agent import digihub_agent
 # Load local .env
 load_dotenv()
 
-app = FastAPI(title="DigiHub AGUI Demo Server")
+app = FastAPI(title="OpsHub AGUI Demo Server")
 
 # CORS - allow Angular dev server
 app.add_middleware(
@@ -78,7 +78,7 @@ chat_client = OpenAIChatCompletionClient(
     api_version=os.getenv("OPENAI_API_VERSION_GPT_5_2_AGENT"),
 )
 
-# Register the DigiHub agent endpoint
+# Register the OpsHub agent endpoint
 add_agent_framework_fastapi_endpoint(app, digihub_agent(chat_client), "/digihub")
 
 # Also register a simple chat endpoint for fallback

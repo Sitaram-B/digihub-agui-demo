@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { z } from 'zod';
 import { CopilotSidebar, registerFrontendTool } from '@copilotkit/angular';
 import { AguiService } from '../../services/agui.service';
@@ -7,10 +7,14 @@ import { AguiService } from '../../services/agui.service';
   selector: 'app-chatbot',
   imports: [CopilotSidebar],
   templateUrl: './chatbot.html',
-  styleUrl: './chatbot.scss'
+  styleUrl: './chatbot.scss',
+  host: {
+    '[style.width.px]': 'sidebarOpen ? 380 : 0',
+    '[style.transition]': '"width 0.3s ease-in-out"'
+  }
 })
 export class ChatbotComponent {
-  sidebarOpen = signal(true);
+  sidebarOpen = true;
 
   constructor(private aguiService: AguiService) {
     // Register frontend tool: applyIncidentFilters
@@ -47,7 +51,7 @@ export class ChatbotComponent {
     // Register frontend tool: navigateToPage
     registerFrontendTool({
       name: 'navigateToPage',
-      description: 'Navigate to a page in the DigiHub portal',
+      description: 'Navigate to a page in the Ops portal',
       parameters: z.object({
         page: z.string().describe('Page path: operational-support/incidents or billing'),
       }),

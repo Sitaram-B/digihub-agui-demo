@@ -25,6 +25,7 @@
   overflow-y: auto;
   padding: 24px;
   background-color: #ffffff;
+  min-width: 0;
 }
 
 app-sidebar {
@@ -37,4 +38,5 @@ app-sidebar {
 
 app-chatbot {
   flex-shrink: 0;
+  /* width is managed dynamically by host bindings in chatbot.ts */
 }

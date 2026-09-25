@@ -46,23 +46,28 @@ a {
 .copilotKitUserMessage {
   align-items: flex-start !important;
   padding-top: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 /* Style the actual text bubble (custom element) */
 copilot-chat-user-message-renderer {
-  background-color: #e8f4f8 !important; /* icy blue tint to match DigiHub theme */
+  display: inline-block !important;
+  background-color: #e8f4f8 !important; /* icy blue tint to match portal theme */
   border-radius: 12px !important;
-  padding: 10px 16px !important;
+  padding: 14px 20px !important;
   text-align: left !important;
+  margin: 4px 0 !important;
 }
 
 .copilotKitAssistantMessage {
-  padding: 14px 18px !important;
+  padding: 16px 20px !important;
   line-height: 1.5 !important;
   background-color: white !important;
   border: 1px solid #eaeaea !important;
   border-radius: 16px !important;
   margin-right: 20px !important;
+  margin-left: 20px !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
 }
 
