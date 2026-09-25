@@ -1,0 +1,76 @@
+.support-container {
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  
+  h1 {
+    position: relative;
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+  }
+}
+
+.support-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.support-card {
+  padding: 40px;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  
+  h3 {
+    font-size: 24px;
+    font-weight: 300;
+  }
+  
+  &.light {
+    background-color: #f2ede7;
+    color: #333;
+    
+    .badge {
+      background: #e0dcd7;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  }
+  
+  &.purple {
+    background-color: #aa86fc;
+    color: #1a1a1a;
+    
+    .circle-btn {
+      background: #1a1a1a;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+  }
+}

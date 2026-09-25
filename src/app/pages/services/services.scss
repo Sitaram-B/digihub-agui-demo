@@ -1,0 +1,70 @@
+.services-container {
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #bbe8ee; /* icy blue */
+  border-radius: 8px;
+  padding: 25px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1a1a1a;
+  }
+  
+  .star {
+    font-size: 24px;
+  }
+}
+
+.features {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  flex-grow: 1;
+  color: #333;
+  line-height: 1.6;
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  width: fit-content;
+  cursor: pointer;
+  font-size: 14px;
+}

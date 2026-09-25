@@ -53,7 +53,7 @@ export class ChatbotComponent {
       name: 'navigateToPage',
       description: 'Navigate to a page in the Ops portal',
       parameters: z.object({
-        page: z.string().describe('Page path: operational-support/incidents or billing'),
+        page: z.string().describe('Page path: home, services, library, learning-hub, support, idea-hub, billing, or operational-support/incidents'),
       }),
       handler: async (args) => {
         this.aguiService.navigateTo(args.page);
