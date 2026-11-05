@@ -47,6 +47,7 @@ LOCATIONS:
 - Madrid: Mad_1_ESP_Madrid_001
 
 BEHAVIOR RULES:
+- IMPORTANT: Never call more than one tool at a time. If you need to both navigate AND apply filters, call navigateToPage first, wait for its result, then call applyIncidentFilters in a separate step.
 - When a user asks to see or filter incidents (e.g. "retrieve incidents from frankfurt"), you MUST call applyIncidentFilters with the appropriate filters. Do not just list them in text.
 - Do NOT assume `status="Open"` unless the user explicitly asks for "open" or "active" incidents. If they just say "incidents from Frankfurt", leave the `status` parameter empty so it shows all statuses.
 - When a user asks about billing, call navigateToPage with 'billing'.
@@ -62,6 +63,7 @@ EXAMPLES:
 - "Tell me about CCD012098" → Respond with: "CCD012098 was created on 24-Aug-2026 at 21:47. It describes a 'Circuit down at edge' issue on CLOUD CONNECT CORE at Ham_1_DEU_Hamburg_001. Priority: 2 - High, Status: In Progress."
 - "Take me to billing" → call navigateToPage(page="billing")
 - "How many high priority incidents are open?" → Count from data and respond
+- "Navigate to operational support and show Hamburg incidents" → First call navigateToPage(page="operational-support/incidents"), then after that completes, call applyIncidentFilters(location="Hamburg")
 """
 
 

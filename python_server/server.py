@@ -79,11 +79,11 @@ chat_client = OpenAIChatCompletionClient(
 )
 
 # Register the OpsHub agent endpoint
-add_agent_framework_fastapi_endpoint(app, digihub_agent(chat_client), "/digihub")
+add_agent_framework_fastapi_endpoint(app, digihub_agent(chat_client), "/digihub", single_user=True)
 
 # Also register a simple chat endpoint for fallback
 from agent_framework_ag_ui_examples.agents import simple_agent
-add_agent_framework_fastapi_endpoint(app, simple_agent(chat_client), "/agentic_chat")
+add_agent_framework_fastapi_endpoint(app, simple_agent(chat_client), "/agentic_chat", single_user=True)
 
 
 def main():
